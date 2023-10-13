@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:head>
+        <title>Web-Lab_03 - Input values</title>
+        <h:outputStylesheet library="css" name="main.css"/>
+    </h:head>
+    <h:body>
+        <header>
+            <nav class="container">
+                <a href="index.xhtml" class="active">Калькулятор</a>
+            </nav>
+        </header>
+        <main class="container">
+            <h1 class="display center">Розрахунок функції</h1>
+            <h:form role="form">
+                <div class="input_row">
+                    <h:outputLabel value="a:"/>
+                    <h:inputText value="#{calculatorBean.calculator.a}"/>
+                </div>
+                <div class="input_row">
+                    <h:outputLabel value="X_min:"/>
+                    <h:inputText value="#{calculatorBean.calculator.min_x}"/>
+                </div>
+                <div class="input_row">
+                    <h:outputLabel value="X_max:"/>
+                    <h:inputText value="#{calculatorBean.calculator.max_x}"/>
+                </div>
+                <div class="input_row">
+                    <h:outputLabel value="Step:"/>
+                    <h:inputText value="#{calculatorBean.calculator.step}"/>
+                </div>
+                <div class="input_row">
+                    <h:outputLabel value="Break line:"/>
+                    <h:inputText value="#{calculatorBean.calculator.break_line}"/>
+                </div>
+                <div class="input_row">
+                    <label> </label>
+                    <h:commandButton value="Рахувати" action="#{calculatorBean.compute()}"/>
+                </div>
+            </h:form>
+        </main>
+    </h:body>
+</f:view>
+</html>

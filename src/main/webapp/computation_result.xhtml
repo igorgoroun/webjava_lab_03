@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:head>
+        <title>Web-Lab_03 - Computation results</title>
+        <h:outputStylesheet library="css" name="main.css"/>
+    </h:head>
+    <h:body>
+        <header>
+            <nav class="container">
+                <a href="index.xhtml">До калькулятора</a>
+            </nav>
+        </header>
+
+        <main class="container">
+            <h1 class="display center">Результати розрахунку</h1>
+            <h3>Ключові</h3>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Steps"/>
+                <h:outputText value="#{calculatorBean.calculator.result._steps}"/>
+                <h:outputLabel value="Item 0"/>
+                <h:outputText value="x=#{calculatorBean.calculator.result.get_x(0)}; y=#{calculatorBean.calculator.result.get_y(0)}"/>
+                <h:outputLabel value="Item 180"/>
+                <h:outputText value="x=#{calculatorBean.calculator.result.get_x(180)}; y=#{calculatorBean.calculator.result.get_y(180)}"/>
+                <h:outputLabel value="Item 240"/>
+                <h:outputText value="x=#{calculatorBean.calculator.result.get_x(240)}; y=#{calculatorBean.calculator.result.get_y(240)}"/>
+                <h:outputLabel value="Max"/>
+                <h:outputText value="i=#{calculatorBean.calculator.result._max}; x=#{calculatorBean.calculator.result.get_x(calculatorBean.calculator.result._max)}; y=#{calculatorBean.calculator.result.get_y(calculatorBean.calculator.result._max)}"/>
+                <h:outputLabel value="Min"/>
+                <h:outputText value="i=#{calculatorBean.calculator.result._min}; x=#{calculatorBean.calculator.result.get_x(calculatorBean.calculator.result._min)}; y=#{calculatorBean.calculator.result.get_y(calculatorBean.calculator.result._min)}"/>
+                <h:outputLabel value="Avg"/>
+                <h:outputText value="#{calculatorBean.calculator.result._avg}"/>
+                <h:outputLabel value="Sum"/>
+                <h:outputText value="#{calculatorBean.calculator.result._sum}"/>
+            </h:panelGrid>
+
+            <h3>Всі результати</h3>
+            <h:dataTable value="#{calculatorBean.calculator.result._points}" var="rp">
+                <h:column>
+                    <f:facet name="header">X</f:facet>
+                    <h:outputText value="#{rp.x}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Y</f:facet>
+                    <h:outputText value="#{rp.y}"/>
+                </h:column>
+            </h:dataTable>
+        </main>
+    </h:body>
+</f:view>
+</html>
